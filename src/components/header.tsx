@@ -14,7 +14,7 @@ export function Header({links, page}: {links: {label: string, href: string}[], p
         <header className="flex justify-between items-center p-4 fixed top-0 left-0 right-0 z-50">
             <div className="flex items-center gap-4">
                 <Image
-                    src={theme === 'light' ? light : dark}
+                    src={theme === 'light' ? light! : dark!}
                     alt="QRK"
                     width={40}
                     height={40}

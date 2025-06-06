@@ -5,6 +5,3 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-export function asPage(page: any) {
-  (window as any).$$page = page;
-}

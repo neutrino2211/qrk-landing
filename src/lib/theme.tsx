@@ -10,7 +10,7 @@ const ThemeContext = createContext<{
   toggleTheme: () => void;
 }>({
   theme: 'dark',
-  toggleTheme: () => {},
+  toggleTheme: () => void 0,
 });
 
 // Theme Provider Component
