@@ -5,9 +5,9 @@ export default function TeamPage() {
     <>
       <div className="my-auto mt-16 w-full">
         <div className="py-24 text-center">
-          <h1 className="text-8xl font-light">OUR AMAZING TEAM</h1>
+          <h1 className="text-6xl font-light md:text-8xl">OUR AMAZING TEAM</h1>
         </div>
-        <div className="grid grid-cols-1 px-16 md:grid-cols-3">
+        <div className="grid grid-cols-1 px-16 md:grid-cols-2 xl:grid-cols-3">
           <Headshot
             imageSrc="/images/maleek-hs.jpg"
             name="Abdul-Maleek Mustapha"

@@ -9,7 +9,7 @@ export default async function BlogPost({
   const { date } = await getHijriDate(new Date(meta.publishedAt));
   return (
     <div>
-      <h1 className="pb-8 text-6xl font-light">{meta.title}</h1>
+      <h1 className="pb-8 text-4xl font-light md:text-6xl">{meta.title}</h1>
       <div className="my-4 flex items-center justify-between text-[#aaa] dark:text-[#444]">
         <p className="font-bold">
           FROM <span className="text-foreground font-light">{meta.author}</span>

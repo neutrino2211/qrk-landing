@@ -4,9 +4,11 @@ import { Header } from "../components/header";
 export default function HomePage() {
   return (
     <>
-      <CursorFollow/>
-      <div className="my-auto w-full mt-[40vh]">
-        <h1 className="text-8xl my-4 text-center leading-tight">LIBERATE THE HUMAN</h1>
+      <CursorFollow />
+      <div className="my-auto mt-[40vh] w-full">
+        <h1 className="my-4 text-center text-6xl leading-tight md:text-8xl">
+          LIBERATE THE HUMAN
+        </h1>
       </div>
     </>
   );
