@@ -42,7 +42,7 @@ export default function RootLayout({
             <Header
               links={[
                 { label: "Home", href: "/" },
-                { label: "Team", href: "/team" },
+                { label: "About Us", href: "/about-us" },
                 { label: "Mission", href: "/mission" },
               ]}
             />
