@@ -4,8 +4,8 @@ export default function TeamPage() {
   return (
     <>
       <div className="container mx-auto my-auto mt-16">
-        <div className="py-24">
-          <h1 className="text-center text-6xl font-light md:text-8xl">
+        <div className="pt-24">
+          <h1 className="mb-16 text-center text-6xl font-light md:text-8xl">
             WHO ARE WE?
           </h1>
           <MissionStatement />

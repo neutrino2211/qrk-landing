@@ -43,7 +43,7 @@ export default function RootLayout({
               links={[
                 { label: "Home", href: "/" },
                 { label: "About Us", href: "/about-us" },
-                { label: "Mission", href: "/mission" },
+                { label: "Blog", href: "/blog" },
               ]}
             />
             {children}
