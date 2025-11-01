@@ -49,6 +49,14 @@ export default function RootLayout({
             {children}
           </ThemeProvider>
         </div>
+
+        <footer>
+          <div className="flex h-16 items-center justify-center">
+            <p className="text-sm text-gray-500">
+              QRK | Tech For Humanity | 2025
+            </p>
+          </div>
+        </footer>
       </body>
     </html>
   );

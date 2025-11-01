@@ -6,7 +6,6 @@ export default async function BlogPost({
   meta,
   children,
 }: PropsWithChildren<{ meta: BlogMetadata }>) {
-  const { date } = await getHijriDate(new Date(meta.publishedAt));
   return (
     <div>
       <h1 className="pb-8 text-4xl font-light md:text-6xl">{meta.title}</h1>
@@ -15,7 +14,8 @@ export default async function BlogPost({
           FROM <span className="text-foreground font-light">{meta.author}</span>
         </p>
         <p className="font-bold">
-          DATE <span className="text-foreground font-light">{date}</span>
+          DATE{" "}
+          <span className="text-foreground font-light">{meta.publishedAt}</span>
         </p>
       </div>
       <hr />

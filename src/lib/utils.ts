@@ -42,8 +42,13 @@ export async function getHijriDate(date: Date) {
 
   const apiUrl = `https://api.aladhan.com/v1/gToH/${day.split("/").join("-")}?calendarMethod=HJCoSA`;
 
-  const response = await fetch(apiUrl);
+  try {
+    const response = await fetch(apiUrl);
 
-  const data = (await response.json()) as { data: { hijri: Hijri } };
-  return data.data.hijri;
+    const data = (await response.json()) as { data: { hijri: Hijri } };
+    return data.data.hijri;
+  } catch (error) {
+    console.error("Error fetching hijri date:", error);
+    return null;
+  }
 }

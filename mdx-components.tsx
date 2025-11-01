@@ -1,4 +1,5 @@
 import type { MDXComponents } from "mdx/types";
+import Image from "next/image";
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
@@ -23,6 +24,25 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     h6: ({ children }) => (
       <h6 className="py-4 text-sm font-light md:text-xl">{children}</h6>
     ),
-    p: ({ children }) => <p className="text-lg">{children}</p>,
+    p: ({ children }) => <p className="py-2 text-lg">{children}</p>,
+    a: ({ children, ...rest }) => (
+      <a
+        {...rest}
+        className="inline font-medium text-blue-600 group-hover:underline dark:text-blue-400"
+      >
+        {children}
+      </a>
+    ),
+    ul: ({ children }) => <ul className="list-disc pl-4">{children}</ul>,
+    ol: ({ children }) => <ol className="list-decimal pl-4">{children}</ol>,
+    li: ({ children }) => <li className="py-1 font-light">{children}</li>,
+    img: ({ src, alt }: { src: string; alt: string }) => (
+      <div>
+        <hr />
+        <Image src={src} alt={alt} />
+        <p className="text-muted w-full text-center">{alt}</p>
+        <hr />
+      </div>
+    ),
   };
 }
