@@ -28,6 +28,8 @@
     "gray-matter": "^4.0.3",
     "lucide-react": "^0.513.0",
     "next": "^15.2.3",
+    "posthog-js": "^1.284.0",
+    "posthog-node": "^5.11.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-hook-form": "^7.57.0",

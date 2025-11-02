@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { ThemeProvider } from "@/lib/theme";
 import "@/styles/globals.css";
 import { Header } from "@/components/header";
+import { PostHogProvider } from "@/components/PostHogProvider";
 
 export const metadata: Metadata = {
   title: "QRK | Tech For Humanity",
@@ -37,26 +38,28 @@ export default function RootLayout({
         />
       </head>
       <body className="h-full w-full">
-        <div id="root" className="h-full w-full">
-          <ThemeProvider>
-            <Header
-              links={[
-                { label: "Home", href: "/" },
-                { label: "About Us", href: "/about-us" },
-                { label: "Blog", href: "/blog" },
-              ]}
-            />
-            {children}
-          </ThemeProvider>
-        </div>
-
-        <footer>
-          <div className="flex h-16 items-center justify-center">
-            <p className="text-sm text-gray-500">
-              QRK | Tech For Humanity | 2025
-            </p>
+        <PostHogProvider>
+          <div id="root" className="h-full w-full">
+            <ThemeProvider>
+              <Header
+                links={[
+                  { label: "Home", href: "/" },
+                  { label: "About Us", href: "/about-us" },
+                  { label: "Blog", href: "/blog" },
+                ]}
+              />
+              {children}
+            </ThemeProvider>
           </div>
-        </footer>
+
+          <footer>
+            <div className="flex h-16 items-center justify-center">
+              <p className="text-sm text-gray-500">
+                QRK | Tech For Humanity | 2025
+              </p>
+            </div>
+          </footer>
+        </PostHogProvider>
       </body>
     </html>
   );
