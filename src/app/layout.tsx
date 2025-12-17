@@ -52,11 +52,29 @@ export default function RootLayout({
             </ThemeProvider>
           </div>
 
-          <footer>
-            <div className="flex h-16 items-center justify-center">
-              <p className="text-sm text-gray-500">
-                QRK | Tech For Humanity | 2025
-              </p>
+          <footer className="border-t border-border/40 bg-background/80 backdrop-blur-xl supports-[backdrop-filter]:bg-background/60">
+            <div className="container mx-auto px-4 md:px-8">
+              <div className="flex flex-col md:flex-row items-center justify-between gap-4 py-8">
+                <p className="text-sm text-muted-foreground font-light">
+                  QRK | Tech For Humanity | 2025
+                </p>
+                <div className="flex items-center gap-6">
+                  <a
+                    href="https://github.com/qrk-tech"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                  >
+                    GitHub
+                  </a>
+                  <a
+                    href="mailto:hello@qrk.ng"
+                    className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                  >
+                    Contact
+                  </a>
+                </div>
+              </div>
             </div>
           </footer>
         </PostHogProvider>

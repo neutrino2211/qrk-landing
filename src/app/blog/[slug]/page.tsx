@@ -58,7 +58,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     }
 
     return (
-      <div className="relative z-10 container mx-auto mt-28 p-8">
+      <div className="relative z-10 container mx-auto mt-28 px-4 md:px-8 pb-16">
         <BlogPost meta={metadata}>
           <Content />
         </BlogPost>

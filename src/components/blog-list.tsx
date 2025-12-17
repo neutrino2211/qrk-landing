@@ -3,34 +3,39 @@ import type { BlogPost } from '@/lib/blog';
 
 export default function BlogList({ posts }: { posts: BlogPost[] }) {
   return (
-    <div className="space-y-12">
+    <div className="space-y-16">
       {posts.map((post) => (
-        <article key={post.slug} className="border-b border-gray-200 dark:border-gray-700 pb-8">
-          <Link href={`/blog/${post.slug}`} className="block group">
-            <h2 className="text-3xl font-light mb-4 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+        <article key={post.slug} className="group">
+          <Link href={`/blog/${post.slug}`} className="block space-y-4">
+            <h2 className="text-4xl font-light tracking-tight transition-colors group-hover:text-primary md:text-5xl">
               {post.title}
             </h2>
-            <div className="flex items-center justify-between text-[#aaa] dark:text-[#444] mb-4">
-              <p className="font-bold">
-                BY <span className="text-foreground font-light">{post.author}</span>
+
+            <div className="flex flex-col gap-2 text-sm md:flex-row md:items-center md:gap-6">
+              <p className="text-muted-foreground">
+                By <span className="text-foreground">{post.author}</span>
               </p>
-              <p className="font-bold">
-                <span className="text-foreground font-light">
-                  {new Date(post.publishedAt).toLocaleDateString('en-US', {
-                    year: 'numeric',
-                    month: 'long',
-                    day: 'numeric'
-                  })}
-                </span>
+              <span className="hidden md:inline text-muted-foreground">•</span>
+              <p className="text-muted-foreground">
+                {new Date(post.publishedAt).toLocaleDateString('en-US', {
+                  year: 'numeric',
+                  month: 'long',
+                  day: 'numeric'
+                })}
               </p>
             </div>
-            <div className="text-lg text-gray-600 dark:text-gray-300 line-clamp-3">
+
+            <p className="text-lg leading-relaxed text-foreground/80 line-clamp-3 max-w-3xl">
               {post.excerpt}
-            </div>
-            <div className="mt-4 text-blue-600 dark:text-blue-400 font-medium group-hover:underline">
-              Read more →
+            </p>
+
+            <div className="inline-flex items-center gap-2 text-primary font-medium group-hover:gap-3 transition-all pt-2">
+              Read more
+              <span className="transition-transform group-hover:translate-x-1">→</span>
             </div>
           </Link>
+
+          <div className="mt-8 h-px bg-gradient-to-r from-border via-border to-transparent" />
         </article>
       ))}
     </div>
