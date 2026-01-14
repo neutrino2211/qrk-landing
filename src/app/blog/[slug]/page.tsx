@@ -29,7 +29,7 @@ export async function generateMetadata({ params }: BlogPostPageProps) {
   return {
     title: metadata.title,
     description: `By ${metadata.author} on ${new Date(
-      metadata.publishedAt,
+      metadata.publishedAt
     ).toLocaleDateString("en-US", {
       year: "numeric",
       month: "long",
@@ -47,7 +47,6 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   }
 
   try {
-    // Dynamic import of the MDX file with proper typing
     const postModule = (await import(
       `@/content/blog/${slug}.mdx`
     )) as BlogModule;
@@ -58,11 +57,11 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     }
 
     return (
-      <div className="relative z-10 container mx-auto mt-28 px-4 md:px-8 pb-16">
+      <main>
         <BlogPost meta={metadata}>
           <Content />
         </BlogPost>
-      </div>
+      </main>
     );
   } catch {
     notFound();
